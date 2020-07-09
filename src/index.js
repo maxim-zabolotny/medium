@@ -5,15 +5,18 @@ import {CurrentUserProvider} from 'context/currentUser'
 
 import Topbar from 'copmonents/topbar'
 import Routes from 'routes'
+import CurrentUserChecker from "copmonents/currentUserChecker";
 
 const App = () => {
     return (
         <div>
             <CurrentUserProvider>
-                <Router>
-                    <Topbar/>
-                    <Routes/>
-                </Router>
+                <CurrentUserChecker>
+                    <Router>
+                        <Topbar/>
+                        <Routes/>
+                    </Router>
+                </CurrentUserChecker>
             </CurrentUserProvider>
 
         </div>
